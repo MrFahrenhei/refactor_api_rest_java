@@ -1,5 +1,6 @@
 package br.com.alura.adopet.api.model;
 
+import br.com.alura.adopet.api.dto.RegisterPetDto;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -43,6 +44,19 @@ public class Pet {
     @OneToOne(mappedBy = "pet")
     @JsonBackReference("adocao_pets")
     private Adocao adocao;
+
+    public Pet(RegisterPetDto dto, Abrigo abrigo){
+        this.tipo = dto.tipo();
+        this.nome = dto.nome();
+        this.raca = dto.raca();
+        this.idade = dto.idade();
+        this.cor = dto.cor();
+        this.peso = dto.peso();
+        this.abrigo = abrigo;
+        this.adotado = false;
+    }
+
+    public Pet(){}
 
     @Override
     public boolean equals(Object o) {
