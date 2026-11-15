@@ -1,15 +1,20 @@
 package br.com.alura.adopet.api.dto;
 
 import br.com.alura.adopet.api.model.TipoPet;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.NotNull;
 
 public record RegisterPetDto(
+        @NotNull
         TipoPet tipo,
+        @NotNull
         String nome,
+        @NotNull
         String raca,
+        @NotNull
         Integer idade,
+        @NotNull
         String cor,
+        @NotNull
         Float peso
 ) {
 }

@@ -24,7 +24,7 @@ public class Abrigo {
     private String nome;
 
     @NotBlank
-    @Pattern(regexp = "\\(?\\d{2}\\)?\\d?\\d{4}-?\\d{4}")
+    //@Pattern(regexp = "\\(?\\d{2}\\)?\\d?\\d{4}-?\\d{4}")
     private String telefone;
 
     @NotBlank
@@ -37,7 +37,7 @@ public class Abrigo {
 
     public Abrigo(){}
 
-    public Abrigo(RequestAbrigoDTO dto){
+    public Abrigo(RegisterShelterDto dto){
         this.nome = dto.nome();
         this.telefone = dto.telefone();
         this.email = dto.email();

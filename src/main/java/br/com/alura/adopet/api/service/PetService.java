@@ -20,7 +20,7 @@ public class PetService {
     }
 
     public void registerPet(Abrigo abrigo, RegisterPetDto dto){
-        repository.save(new Pet(dto));
+        repository.save(new Pet(dto, abrigo));
     }
 
 }

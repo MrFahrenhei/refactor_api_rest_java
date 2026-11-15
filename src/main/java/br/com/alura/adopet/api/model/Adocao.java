@@ -20,7 +20,6 @@ public class Adocao {
     private Tutor tutor;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "pet_id")
     private Pet pet;
 
     private String motivo;

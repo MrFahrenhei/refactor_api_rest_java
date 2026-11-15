@@ -26,14 +26,14 @@ public class AbrigoService {
         return repository.findAll().stream().map(AbrigoDto::new).toList();
     }
 
-    public void registerAbrigo(RequestAbrigoDTO dto){
+    public void registerAbrigo(RegisterShelterDto dto){
         boolean isRegistered = repository.existsByNomeOrTelefoneOrEmail(dto.nome(), dto.telefone(), dto.email());
 
         if(isRegistered){
             throw new ValidatingException("Dados já cadastrados para outro abrigo");
         }
 
-        repository.saveAll(new Abrigo(dto));
+        repository.save(new Abrigo(dto));
     }
 
     public List<PetDto> listPetsFromShelter(String idOuName){
@@ -52,7 +52,7 @@ public class AbrigoService {
         }
 
         return optional.orElseThrow(
-                () -> new ValidatingException("Abrigo não econtrado");
+                () -> new ValidatingException("Abrigo não econtrado")
         );
     }
 

@@ -1,11 +1,15 @@
 package br.com.alura.adopet.api.model;
 
+import br.com.alura.adopet.api.dto.RegisterTutorDto;
+import br.com.alura.adopet.api.dto.UpdateTutorDto;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import org.hibernate.sql.Update;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -21,7 +25,7 @@ public class Tutor {
     private String nome;
 
     @NotBlank
-    @Pattern(regexp = "\\(?\\d{2}\\)?\\d?\\d{4}-?\\d{4}")
+//    @Pattern(regexp = "\\(?\\d{2}\\)?\\d?\\d{4}-?\\d{4}")
     private String telefone;
 
     @NotBlank
@@ -31,7 +35,21 @@ public class Tutor {
     // quando é ToMany, o padrão é lazy
     @OneToMany(mappedBy = "tutor")
     @JsonManagedReference("tutor_adocoes")
-    private List<Adocao> adocoes;
+    private List<Adocao> adocoes = new ArrayList<>();
+
+    public Tutor(){}
+
+    public Tutor(RegisterTutorDto dto){
+        this.nome = dto.name();
+        this.telefone = dto.telefone();
+        this.email = dto.email();
+    }
+
+    public void updateInformations(UpdateTutorDto dto){
+        this.nome = dto.nome();
+        this.telefone = dto.telefone();
+        this.email = dto.email();
+    }
 
     @Override
     public boolean equals(Object o) {

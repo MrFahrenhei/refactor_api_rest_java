@@ -37,8 +37,7 @@ public class Pet {
 
     private Boolean adotado;
 
-    @ManyToOne
-    @JsonBackReference("abrigo_pets")
+    @ManyToOne(fetch = FetchType.LAZY)
     private Abrigo abrigo;
 
     @OneToOne(mappedBy = "pet")
