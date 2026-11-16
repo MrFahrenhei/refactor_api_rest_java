@@ -78,6 +78,10 @@ public class Adocao {
         return status;
     }
 
+    public String getMotivo() {
+        return motivo;
+    }
+
     public String getJustificativaStatus() {
         return justificativaStatus;
     }
