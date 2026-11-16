@@ -3,7 +3,6 @@ package br.com.alura.adopet.api.service;
 import br.com.alura.adopet.api.dto.AbrigoDto;
 import br.com.alura.adopet.api.dto.PetDto;
 import br.com.alura.adopet.api.dto.RegisterShelterDto;
-import br.com.alura.adopet.api.dto.RequestAbrigoDTO;
 import br.com.alura.adopet.api.exception.ValidatingException;
 import br.com.alura.adopet.api.model.Abrigo;
 import br.com.alura.adopet.api.repository.AbrigoRepository;

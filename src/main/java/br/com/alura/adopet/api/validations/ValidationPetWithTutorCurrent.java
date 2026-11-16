@@ -21,7 +21,7 @@ public class ValidationPetWithTutorCurrent implements Validations {
 //        List<Adocao> adocoes = adocaoRepository.findAll();
 //        Tutor tutor = tutorRepository.getReferenceById(dto.idTutor());
 //        for (Adocao a : adocoes) {
-        boolean tutorPossuiAdocao = adocaoRepository.existsByTutorIdAndStatus(dto.idTutor(), StatusAdocao.AGUARDANDO_AVALIACAO);
+        boolean tutorPossuiAdocao = adocaoRepository.existsByPetIdAndStatus(dto.idTutor(), StatusAdocao.AGUARDANDO_AVALIACAO);
         if (tutorPossuiAdocao) {
             throw new ValidatingException("Tutor já possui outra adoção aguardando avaliação!");
         }

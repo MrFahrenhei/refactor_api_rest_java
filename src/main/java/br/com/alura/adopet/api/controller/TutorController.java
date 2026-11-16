@@ -2,10 +2,7 @@ package br.com.alura.adopet.api.controller;
 
 import br.com.alura.adopet.api.dto.RegisterTutorDto;
 import br.com.alura.adopet.api.dto.UpdateTutorDto;
-import br.com.alura.adopet.api.model.Tutor;
-import br.com.alura.adopet.api.repository.TutorRepository;
 import br.com.alura.adopet.api.service.TutorService;
-import jakarta.validation.ReportAsSingleViolation;
 import jakarta.validation.Valid;
 import jakarta.validation.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
