@@ -26,7 +26,6 @@ class AdocaoControllerTest {
     void shouldReturnNotFoundForAdoptionRequestWithErros() throws Exception {
         //Arrange
         String json = "{}";
-
         //act
         var response = mvc.perform(
                 post("/adocoes")
