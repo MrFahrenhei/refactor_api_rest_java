@@ -4,7 +4,6 @@ import br.com.alura.adopet.api.dto.RequestAdocaoDto;
 import br.com.alura.adopet.api.exception.ValidatingException;
 import br.com.alura.adopet.api.model.StatusAdocao;
 import br.com.alura.adopet.api.repository.AdocaoRepository;
-import br.com.alura.adopet.api.repository.PetRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

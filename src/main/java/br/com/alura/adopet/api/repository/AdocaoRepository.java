@@ -5,5 +5,6 @@ import br.com.alura.adopet.api.model.StatusAdocao;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AdocaoRepository extends JpaRepository<Adocao, Long> {
+    int countByTutorIdAndStatus(Long idTutor, StatusAdocao status);
     boolean existsByPetIdAndStatus(Long idPet, StatusAdocao status);
 }
